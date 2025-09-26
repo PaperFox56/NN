@@ -5,6 +5,9 @@ from arrayViewer import view
 
 import numpy.random as rd
 
+#First attempt at a concurency based neural network
+# The generator try to create good images while the discriminer try to tell whether an image is generated or not
+
 class Discriminer(SimpleForward):
     def __init__(self, layers, size):
         SimpleForward.__init__(self, layers, size)
@@ -29,7 +32,8 @@ class Discriminer(SimpleForward):
             cost = self.cost(output[-1], target)
             tempCost += cost
             print(output[-1][18])
-            # Computing each layer error gradient
+            
+            # Computing each layer's error gradient
             g.append(self.derivative(output[-1])*(output[-1] - target))
             for j in range(-2, -self.layers-1, -1):
                 g.insert(0, self.derivative(output[j])*np.transpose(self.weights[j+1]).dot(g[0]))
