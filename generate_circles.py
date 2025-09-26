@@ -3,6 +3,8 @@ from random import randint
 from arrayViewer import view
 from numpy import zeros, array
 
+## this module generate randomly sized circle shapes
+
 def blur(a, s, c):
     filter = array([[0, 1, 0],
                     [1, 0, 1],
@@ -43,6 +45,7 @@ def generateCircles(n, s):
     return circles
 
 g = generateCircles(100, 10)
+# Change the destination file here
 with open("images/circles.py", 'w') as file:
     data = """
 from numpy import array
