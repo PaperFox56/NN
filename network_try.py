@@ -1,6 +1,8 @@
 import numpy as np
 import sys
 
+# This is a separate version where i try things out, may not work as intended
+
 class SimpleForward:
     def __init__(self, layers, size):
         self.iterations = 10000
