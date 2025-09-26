@@ -1,5 +1,7 @@
 import numpy as np
 
+# Various bitmap images of '1'
+
 ones = [
     np.array([
     0, 0, 0, 1, 0, 0,
