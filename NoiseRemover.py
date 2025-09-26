@@ -2,6 +2,8 @@ from network import *
 from ones import ones
 from arrayViewer import view
 
+# Train and test a model for noise removal
+# I tried many parameters but it just ends up memorising the training data
 
 class NoiseRemover(SimpleForward):
     def __init__(self, layers, size):
@@ -36,6 +38,7 @@ if __name__ == "__main__":
     result.resize(6, 6)
     a.resize(6, 6)
     #print(network.weights)
+    # Change the path to save in another file
     network.save("./saves/wo")
     view(a, 50)
     view(result, 50)
